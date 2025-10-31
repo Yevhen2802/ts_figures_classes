@@ -69,8 +69,6 @@ export class Rectangle implements Figure {
     public width: number,
     public height: number,
   ) {
-    this.color = color;
-
     if (width <= 0 || height <= 0) {
       throw new Error('One or more dimensions must be greater than zero.');
     }

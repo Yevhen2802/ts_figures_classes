@@ -22,7 +22,7 @@ export class Triangle implements Figure {
     public c: number,
   ) {
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('your error message');
+      throw new Error('One or more dimensions must be greater than zero.');
     }
 
     const maxSide = Math.max(a, b, c);
@@ -30,7 +30,7 @@ export class Triangle implements Figure {
     const sumOfOtherTwo = perimeter - maxSide;
 
     if (maxSide >= sumOfOtherTwo) {
-      throw new Error('your error message');
+      throw new Error('Sides provided cannot form a valid triangle.');
     }
   }
 
@@ -50,7 +50,7 @@ export class Circle implements Figure {
     public radius: number,
   ) {
     if (radius <= 0) {
-      throw new Error('your error message');
+      throw new Error('One or more dimensions must be greater than zero.');
     }
   }
 
@@ -72,11 +72,8 @@ export class Rectangle implements Figure {
     this.color = color;
 
     if (width <= 0 || height <= 0) {
-      throw new Error('your error message');
+      throw new Error('One or more dimensions must be greater than zero.');
     }
-
-    this.width = width;
-    this.height = height;
   }
 
   getArea(): number {
